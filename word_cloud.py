@@ -6,8 +6,8 @@ from wordcloud import WordCloud, STOPWORDS
 import json
 import emoji
 import re
-# meaningful_types=['名詞','動詞','形容詞']
-meaningful_types=['動詞','形容詞']
+meaningful_types=['名詞','動詞','形容詞']
+# meaningful_types=['動詞','形容詞']
 
 revise_types=['代名詞','助動詞']
 meaningless_words=['大阪','京都','神戸']
@@ -29,7 +29,7 @@ def format_tag_result(x):
             pieces.append((i[0], i[4]))#选择需要的内容
     return pieces
 
-for i in range(5,23):
+for i in range(1,2):
     with open(path.join(d, 'extracted_tweet'+str(i)+'.json'), encoding='utf-8') as f:
         momotaro = f.readlines()
     mct = MeCab.Tagger()
@@ -76,6 +76,6 @@ for i in range(5,23):
 
     image = wordcloud.to_image()
     # image.show()                    # display generated wordcloud
-    image.save('sightseeing'+str(i)+'_mental.png')
+    image.save('sightseeing'+str(i)+'.png')
 # # save wordcloud image
 # wordcloud.to_file(path.join(d, "momo_word_cloud.png"))

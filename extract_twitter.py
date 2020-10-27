@@ -18,5 +18,5 @@ def extract(filename,output):
 		extracted_twitter.append(tweet['tweet'])
 	with open(output,'w',encoding='utf-8') as f:
 		json.dump(extracted_twitter,f,indent=4, ensure_ascii=False)
-for i in range(5,23):
+for i in range(23,24):
 	extract('kobe_sightsee'+str(i)+'.json','extracted_tweet'+str(i)+'.json')
